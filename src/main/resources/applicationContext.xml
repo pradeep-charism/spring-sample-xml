@@ -7,7 +7,8 @@
     <bean name="customerRepository" class="com.charism.repository.HibernateCustomerRepositoryImpl"/>
 
     <bean name="customerService" class="com.charism.service.CustomerServiceImpl">
-        <property name="customerRepository" ref="customerRepository"/>
+        <constructor-arg ref="customerRepository"/>
+        <!--<property name="customerRepository" ref="customerRepository"/>-->
     </bean>
 
 </beans>
