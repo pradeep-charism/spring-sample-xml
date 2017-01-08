@@ -2,6 +2,7 @@ package com.charism.repository;
 
 import com.charism.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +12,8 @@ import java.util.List;
  */
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
+    @Value("${dbUser}")
     private String dbUser;
-
-    public void setDbUser(String dbUser) {
-        this.dbUser = dbUser;
-    }
 
     @Override
     public List<Customer> findAll(){
